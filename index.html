@@ -1,28 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xujun Zhang's Homepage</title>
     <link rel="icon" href="myicon.ico" type="image/x-icon">
-    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="myicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            line-height: 1.6;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            line-height: 1.6;
         }
         .header {
             text-align: center;
-            margin: 20px 0;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 15px;
+            margin-bottom: 20px;
         }
         .profile-img {
             border-radius: 5px;
-            margin-top: 15px;
+            margin: 15px 0;
         }
         section {
-            margin: 25px 0;
+            margin-bottom: 25px;
+        }
+        h1 {
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .paper-title {
+            font-weight: bold;
         }
         a {
             color: #0066cc;
@@ -33,21 +45,25 @@
         }
     </style>
 </head>
-
 <body>
     <div class="header">
-        <h1 style="font-weight:normal; margin-bottom: 5px;">Xujun Zhang 张旭俊</h1>
-        <p style="margin-top: 0;">Tenure-Track Assistant Professor</p>
-        <img src="zxj-cv.jpg" class="profile-img" width="200" height="250" alt="Profile Photo">
+        <h1>
+            <span style="font-family: 'Comic Sans MS', cursive">Xujun Zhang</span>
+            <span style="font-family:楷体"> / 张旭俊</span>
+        </h1>
+        <p>Tenure-track Assistant Professor</p>
+        <p>Guangxi Center for Mathematics Research, Guangxi University</p>
+        <img src="zxj-cv.jpg" alt="Xujun Zhang" class="profile-img" width="200">
     </div>
 
-    <section>
+    <section id="about">
         <h2>About</h2>
-        <p>I am a tenure-track assistant professor at the Guangxi Center for Mathematics Research, Guangxi University (since 2024).</p>
-        <p>I received my Ph.D. from the School of Mathematical Sciences at the University of Chinese Academy of Sciences (UCAS), under the supervision of Professor Fusheng Deng. Previously, I was a postdoctoral researcher at the Institute of Mathematics, Chinese Academy of Sciences, working with Professor Xiangyu Zhou.</p>
+        <p>I am a tenure-track assistant professor at Guangxi Center for Mathematics Research, Guangxi University since 2024.</p>
+        <p>I received my Ph.D. at School of Mathematical Sciences of UCAS, under the supervision of Professor Fusheng Deng. Previously, I was a postdoc with Professor Xiangyu Zhou at Institute of Mathematics, Chinese Academy of Sciences, Beijing, P. R. China.</p>
+        <p><a href="CV-for-Xujun.pdf" target="_blank">Download CV</a></p>
     </section>
 
-    <section>
+    <section id="research">
         <h2>Research Interests</h2>
         <ul>
             <li>Several Complex Variables</li>
@@ -55,49 +71,49 @@
         </ul>
     </section>
 
-    <section>
+    <section id="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:xujunzhang@amss.ac.cn">xujunzhang@amss.ac.cn</a></p>
-        <p>CV: <a href="CV-for-Xujun.pdf" target="_blank">Download PDF</a></p>
     </section>
 
-    <section>
-        <h2>Preprints</h2>
+    <section id="publications">
+        <h2>Publications</h2>
+        <h3>Preprints</h3>
         <ul>
             <li>
-                <strong>The union problem for domains with partial pseudoconvex boundaries</strong><br>
-                (with Jinjin Hu) <a href="https://arxiv.org/abs/2503.18139" target="_blank">arXiv:2503.18139</a>
+                <span class="paper-title">The union problem for domains with partial pseudoconvex boundaries</span>
+                <p>Joint work with Jinjin Hu. <a href="https://arxiv.org/abs/2503.18139" target="_blank">arXiv:2503.18139</a>.</p>
             </li>
             <li>
-                <strong>Skoda's L<sup>2</sup> division theorem for L<sup>2</sup>-optimal pairs</strong><br>
-                (with Zhuo Liu) <a href="https://arxiv.org/abs/2411.15670" target="_blank">arXiv:2411.15670</a>
+                <span class="paper-title">Skoda's L<sup>2</sup> division theorem for L<sup>2</sup>-optimal pairs</span>
+                <p>Joint work with Zhuo Liu. <a href="https://arxiv.org/abs/2411.15670" target="_blank">arXiv:2411.15670</a>.</p>
+            </li>
+        </ul>
+        
+        <h3>Selected Publications</h3>
+        <ul>
+            <li>
+                <span class="paper-title">Characterizations of Curvature positivity of Riemannian vector bundles and convexity or pseudoconvexity of bounded domains in ℝ<sup>n</sup> or ℂ<sup>n</sup> in terms of L<sup>2</sup>-estimate of d or (𝜕) ̄ equation</span>
+                <p>Joint work with Fusheng Deng. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022123621002664" target="_blank">J. Funct. Anal. (2021)</a>.</p>
+            </li>
+            <li>
+                <span class="paper-title">A new characterization of L<sup>2</sup>-domains of holomorphy with null thin complements via L<sup>2</sup>-optimal conditions</span>
+                <p>Joint work with Zhuo Liu. <a href="https://link.springer.com/article/10.1007/s12220-024-01738-y" target="_blank">J. Geom. Anal. (2024)</a>.</p>
+            </li>
+            <li>
+                <span class="paper-title">Positivity of Riemannian Metric and the Existence Theorem of L<sup>2</sup> Estimates for d Operator</span>
+                <p><a href="https://link.springer.com/article/10.1007/s12220-023-01332-8" target="_blank">J. Geom. Anal. (2023)</a>.</p>
             </li>
         </ul>
     </section>
 
-    <section>
-        <h2>Selected Publications</h2>
-        <ul>
-            <li>
-                <strong>Characterizations of curvature positivity of Riemannian vector bundles and convexity or pseudoconvexity of bounded domains in ℝ<sup>n</sup> or ℂ<sup>n</sup> in terms of L<sup>2</sup>-estimates</strong><br>
-                (with Fusheng Deng) <em>Journal of Functional Analysis</em> (2021) 
-                <a href="https://doi.org/10.1016/j.jfa.2021.109220" target="_blank">DOI</a>
-            </li>
-            <li>
-                <strong>A new characterization of L<sup>2</sup>-domains of holomorphy with null thin complements via L<sup>2</sup>-optimal conditions</strong><br>
-                (with Zhuo Liu) <em>Journal of Geometric Analysis</em> (2024)
-                <a href="https://doi.org/10.1007/s12220-024-01738-y" target="_blank">DOI</a>
-            </li>
-            <li>
-                <strong>Positivity of Riemannian Metric and the Existence Theorem of L<sup>2</sup> Estimates for d Operator</strong><br>
-                <em>Journal of Geometric Analysis</em> (2023)
-                <a href="https://doi.org/10.1007/s12220-023-01332-8" target="_blank">DOI</a>
-            </li>
-        </ul>
+    <section id="teaching">
+        <h2>Lecture Notes</h2>
+        <p>[Content to be added]</p>
     </section>
 
-    <div style="text-align: center; margin-top: 40px;">
-        <a href="#">Back to top ↑</a>
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="#top">Back to top</a>
     </div>
 </body>
 </html>
