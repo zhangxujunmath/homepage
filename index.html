@@ -3,359 +3,813 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Xujun Zhang · 张旭俊</title>
+    <meta
+        name="description"
+        content="Academic homepage of Xujun Zhang, Assistant Professor at the Guangxi Center for Mathematics Research, Guangxi University."
+    >
+    <meta name="theme-color" content="#f5f8fb">
+
     <link rel="icon" href="myicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="myicon.ico" type="image/x-icon">
+
     <style>
+        :root {
+            --page-bg: #f5f8fb;
+            --card-bg: #ffffff;
+            --text-primary: #1d3446;
+            --text-secondary: #496276;
+            --heading: #153e5a;
+            --accent: #17658f;
+            --accent-dark: #124f70;
+            --accent-soft: #edf5fb;
+            --border: #dce7ef;
+            --border-light: #edf2f6;
+            --shadow: 0 16px 45px rgba(30, 61, 82, 0.08);
+            --radius-large: 24px;
+            --radius-medium: 14px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #fafafa;
-            color: #1e2b3c;
+            min-height: 100vh;
             padding: 2rem 1rem;
+            background:
+                radial-gradient(circle at top, #ffffff 0, var(--page-bg) 42rem);
+            color: var(--text-primary);
+            font-family:
+                "Segoe UI",
+                Roboto,
+                "Helvetica Neue",
+                Arial,
+                "Noto Sans",
+                "PingFang SC",
+                "Microsoft YaHei",
+                sans-serif;
+            font-size: 16px;
+            line-height: 1.68;
+            text-rendering: optimizeLegibility;
         }
 
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 24px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-            padding: 2.5rem 2.8rem;
-        }
-
-        /* 优雅标题区 */
-        .header {
-            text-align: center;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 1.5rem;
-        }
-
-        .name-wrapper {
-            font-size: 2.4rem;
-            font-weight: 350;
-            letter-spacing: 1px;
-            margin-bottom: 0.3rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: baseline;
-            gap: 0.3rem 0.8rem;
-        }
-
-        .name-comic {
-            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
-            font-weight: 400;
-            color: #1e3c5c;
-        }
-
-        .name-chinese {
-            font-family: 'KaiTi', '楷体', 'STKaiti', serif;
-            font-size: 2.2rem;
-            color: #2a4b6e;
-        }
-
-        .subhead {
-            font-size: 1.2rem;
-            color: #2c5778;
-            margin: 0.5rem 0 0.25rem;
-            font-weight: 350;
-            border-bottom: none;
-        }
-
-        .affiliation {
-            font-size: 1.05rem;
-            color: #4a627a;
-            margin-bottom: 1.5rem;
-        }
-
-        .affiliation a {
-            color: #00668c;
-            text-decoration: none;
-            border-bottom: 1px dotted #b0c9da;
-        }
-
-        .affiliation a:hover {
-            border-bottom: 1px solid #00668c;
-        }
-
-        .profile-img {
-            border-radius: 12px;
-            box-shadow: 0 6px 14px rgba(0, 40, 60, 0.12);
-            width: 200px;
-            height: auto;
-            border: 3px solid white;
-            transition: transform 0.2s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.02);
-        }
-
-        /* 章节通用 */
-        section {
-            margin: 2.2rem 0 2.5rem;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            letter-spacing: -0.3px;
-            border-bottom: 2px solid #e5ecf3;
-            padding-bottom: 0.3rem;
-            margin-bottom: 1.3rem;
-            color: #153e5a;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            font-weight: 450;
-            margin: 1.4rem 0 0.6rem;
-            color: #215b7c;
-            padding-left: 0.2rem;
-        }
-
-        /* 文本 / 列表 */
-        p {
-            margin-bottom: 0.8rem;
-            color: #253c4e;
-        }
-
-        ul, ol {
-            padding-left: 1.8rem;
-            margin: 0.6rem 0 0.4rem;
-        }
-
-        li {
-            margin-bottom: 0.9rem;
-            line-height: 1.55;
-            color: #1f3c50;
-        }
-
-        /* 论文标题加粗 并轻微区分 */
-        .paper-title {
-            font-weight: 600;
-            color: #0b2f41;
-            font-size: 1.05rem;
-        }
-
-        li p {
-            margin: 0.15rem 0 0 0;
-            font-size: 0.95rem;
-            color: #3a566b;
-        }
-
-        /* 链接优雅 */
         a {
-            color: #1f6592;
+            color: var(--accent);
             text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.15s;
+            text-underline-offset: 0.2em;
+            transition:
+                color 0.18s ease,
+                text-decoration-color 0.18s ease,
+                background-color 0.18s ease,
+                border-color 0.18s ease;
         }
 
         a:hover {
-            border-bottom: 1px solid #1f6592;
+            color: var(--accent-dark);
+            text-decoration: underline;
         }
 
-        /* 联系方式微卡片 */
-        #contact p {
-            background: #f2f7fd;
-            padding: 0.9rem 1.2rem;
-            border-radius: 30px;
-            display: inline-block;
-            border-left: 4px solid #2c7cb0;
-            font-size: 1.05rem;
-            margin: 0.2rem 0 0;
+        a:focus-visible {
+            outline: 3px solid rgba(23, 101, 143, 0.25);
+            outline-offset: 3px;
+            border-radius: 4px;
         }
 
-        /* 教学列表紧凑些 */
-        #teaching ul {
-            list-style-type: circle;
+        .container {
+            width: min(100%, 960px);
+            margin: 0 auto;
+            padding: 2.8rem 3rem 2.2rem;
+            overflow: hidden;
+            background-color: var(--card-bg);
+            border: 1px solid rgba(220, 231, 239, 0.85);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow);
         }
 
-        #teaching li {
-            margin-bottom: 0.45rem;
+        /* ---------- Header ---------- */
+
+        .site-header {
+            padding-bottom: 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-light);
         }
 
-        /* CV 链接样式 */
-        .cv-link {
-            display: inline-block;
-            background-color: #ecf3f9;
-            padding: 0.2rem 1.2rem;
-            border-radius: 40px;
+        .name-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem 0.8rem;
+            margin-bottom: 0.35rem;
+            color: var(--heading);
+            font-size: clamp(2rem, 6vw, 2.65rem);
             font-weight: 400;
-            border: 1px solid #bdd3e8;
-            margin-top: 0.5rem;
+            line-height: 1.25;
+            letter-spacing: 0.025em;
         }
 
-        .cv-link a {
-            border-bottom: none;
+        .name-english {
+            font-family:
+                "Comic Sans MS",
+                "Chalkboard SE",
+                "Bradley Hand",
+                cursive;
+            font-weight: 400;
+            color: #1e3f5d;
+        }
+
+        .name-chinese {
+            font-family:
+                "KaiTi",
+                "STKaiti",
+                "楷体",
+                serif;
+            font-size: 0.9em;
+            color: #315b7c;
+        }
+
+        .position {
+            margin-top: 0.5rem;
+            color: #2d5f7e;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.015em;
+        }
+
+        .affiliation {
+            max-width: 760px;
+            margin: 0.35rem auto 1.6rem;
+            color: var(--text-secondary);
+            font-size: 1.03rem;
+        }
+
+        .affiliation-separator {
+            display: inline-block;
+            margin: 0 0.35rem;
+            color: #9aafbe;
+        }
+
+        .profile-img {
+            display: block;
+            width: 200px;
+            max-width: 52vw;
+            height: auto;
+            margin: 0 auto;
+            border: 4px solid #ffffff;
+            border-radius: var(--radius-medium);
+            box-shadow: 0 8px 22px rgba(24, 66, 92, 0.16);
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+        }
+
+        .profile-img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(24, 66, 92, 0.2);
+        }
+
+        /* ---------- Navigation ---------- */
+
+        .site-nav {
+            margin-top: 1.6rem;
+        }
+
+        .site-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.45rem 0.8rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .site-nav li {
+            margin: 0;
+        }
+
+        .site-nav a {
+            display: inline-block;
+            padding: 0.32rem 0.8rem;
+            color: #365b73;
+            font-size: 0.93rem;
+            border: 1px solid transparent;
+            border-radius: 999px;
+        }
+
+        .site-nav a:hover {
+            color: var(--accent-dark);
+            text-decoration: none;
+            background-color: var(--accent-soft);
+            border-color: #d3e5f1;
+        }
+
+        /* ---------- General sections ---------- */
+
+        main {
+            display: block;
+        }
+
+        section {
+            margin: 2.5rem 0;
+            scroll-margin-top: 1rem;
+        }
+
+        h2 {
+            margin-bottom: 1.3rem;
+            padding-bottom: 0.38rem;
+            color: var(--heading);
+            font-size: 1.75rem;
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: -0.015em;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3 {
+            margin: 1.65rem 0 0.75rem;
+            color: #245b7a;
+            font-size: 1.25rem;
+            font-weight: 550;
+            line-height: 1.4;
+        }
+
+        p {
+            margin-bottom: 0.9rem;
+            color: #2b4355;
+        }
+
+        ul,
+        ol {
+            margin: 0.65rem 0 0.5rem;
+            padding-left: 1.55rem;
+        }
+
+        li {
+            margin-bottom: 0.85rem;
+            color: #243e51;
+            line-height: 1.62;
+        }
+
+        /* ---------- About ---------- */
+
+        .cv-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-top: 0.45rem;
+            padding: 0.48rem 1.15rem;
+            color: var(--accent-dark);
+            font-weight: 500;
+            background-color: var(--accent-soft);
+            border: 1px solid #c9ddea;
+            border-radius: 999px;
+        }
+
+        .cv-link:hover {
+            text-decoration: none;
+            background-color: #e2eff8;
+            border-color: #9fc1d8;
+        }
+
+        /* ---------- Research ---------- */
+
+        .research-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .research-list li {
+            position: relative;
+            padding: 0.7rem 1rem 0.7rem 1.2rem;
+            background-color: #f8fbfd;
+            border-left: 4px solid #76a9c7;
+            border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
+        }
+
+        /* ---------- Contact ---------- */
+
+        .contact-card {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem 0.8rem;
+            padding: 0.85rem 1.2rem;
+            background-color: var(--accent-soft);
+            border: 1px solid #d5e6f1;
+            border-left: 4px solid #2c7cab;
+            border-radius: var(--radius-medium);
+        }
+
+        .contact-card p {
+            margin: 0;
+            color: #294c63;
+        }
+
+        .email-separator {
+            color: #93aabd;
+        }
+
+        /* ---------- Publications ---------- */
+
+        .publication-list {
+            padding-left: 1.45rem;
+        }
+
+        .publication-list li {
+            margin-bottom: 1.15rem;
+            padding-left: 0.15rem;
+        }
+
+        .paper-title {
+            display: inline;
+            color: #122f42;
+            font-size: 1.03rem;
+            font-weight: 650;
+        }
+
+        .paper-meta {
+            margin: 0.18rem 0 0.12rem;
+            color: #4c687b;
+            font-size: 0.94rem;
+        }
+
+        .paper-link {
+            font-size: 0.94rem;
             font-weight: 500;
         }
 
-        /* back to top 精致 */
-        .backtop {
+        .status-label {
+            display: inline-block;
+            margin-left: 0.35rem;
+            padding: 0.08rem 0.5rem;
+            color: #48677c;
+            font-size: 0.75rem;
+            font-weight: 600;
+            vertical-align: 0.08rem;
+            background-color: #edf3f7;
+            border-radius: 999px;
+        }
+
+        /* ---------- Teaching ---------- */
+
+        .teaching-list {
+            list-style-type: circle;
+        }
+
+        .teaching-list li {
+            margin-bottom: 0.55rem;
+        }
+
+        .course-note {
+            color: #657d8f;
+            font-size: 0.92rem;
+        }
+
+        /* ---------- Footer ---------- */
+
+        .site-footer {
+            margin-top: 2.8rem;
+            padding-top: 1.5rem;
             text-align: center;
-            margin: 2.5rem 0 0.5rem;
+            border-top: 1px solid var(--border-light);
         }
 
-        .backtop a {
-            font-size: 0.95rem;
-            background: #ecf3f9;
-            padding: 0.4rem 2rem;
-            border-radius: 40px;
-            border: 1px solid #cbdae7;
-            color: #1e506e;
+        .backtop-link {
+            display: inline-block;
+            padding: 0.42rem 1.45rem;
+            color: #28556f;
+            font-size: 0.92rem;
+            background-color: var(--accent-soft);
+            border: 1px solid #cedee9;
+            border-radius: 999px;
         }
 
-        .backtop a:hover {
-            background: #dde9f5;
-            border-color: #8fb0cc;
+        .backtop-link:hover {
+            text-decoration: none;
+            background-color: #dfedf7;
+            border-color: #9dbbd0;
         }
 
-        /* 响应式微调 */
-        @media (max-width: 600px) {
+        /* ---------- Responsive design ---------- */
+
+        @media (max-width: 700px) {
+            body {
+                padding: 0.8rem;
+            }
+
             .container {
-                padding: 1.5rem;
+                padding: 2rem 1.35rem 1.6rem;
+                border-radius: 18px;
             }
-            .name-wrapper {
-                font-size: 1.9rem;
+
+            .site-header {
+                padding-bottom: 1.6rem;
             }
-            .name-chinese {
-                font-size: 1.9rem;
+
+            .affiliation-separator {
+                display: block;
+                height: 0;
+                margin: 0;
+                overflow: hidden;
             }
+
+            .affiliation a {
+                display: inline-block;
+            }
+
+            section {
+                margin: 2.15rem 0;
+            }
+
             h2 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.16rem;
+            }
+
+            .contact-card {
+                display: flex;
+                align-items: flex-start;
+                border-radius: 12px;
+            }
+
+            .email-separator {
+                display: none;
+            }
+
+            .contact-card a {
+                display: block;
+                width: 100%;
+                overflow-wrap: anywhere;
             }
         }
 
-        hr {
-            border: none;
-            border-top: 1px solid #e2e8f0;
-            margin: 0.5rem 0 1rem;
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
         }
 
-        /* 出版物列表里的连接词 (joint work…) 使用更轻盈的颜色 */
-        .paper-authors {
-            color: #3d6079;
-            font-size: 0.95rem;
+        @media print {
+            body {
+                padding: 0;
+                background: #ffffff;
+            }
+
+            .container {
+                max-width: none;
+                padding: 0;
+                border: none;
+                box-shadow: none;
+            }
+
+            .site-nav,
+            .site-footer {
+                display: none;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
         }
     </style>
 </head>
-<body>
+
+<body id="top">
     <div class="container">
-        <!-- 头部 -->
-        <div class="header">
-            <div class="name-wrapper">
-                <span class="name-comic">Xujun Zhang</span>
+
+        <header class="site-header">
+            <h1 class="name-wrapper">
+                <span class="name-english">Xujun Zhang</span>
                 <span class="name-chinese">/ 张旭俊</span>
-            </div>
-            <div class="subhead">Assistant Professor</div>
-            <div class="affiliation">
-                <a href="https://gxcmr.gxu.edu.cn" target="_blank">Guangxi Center for Mathematics Research</a> · 
-                <a href="https://mi.gxu.edu.cn/" target="_blank">School of Mathematics, Guangxi University</a>
-            </div>
-            <img src="zxj-cv.jpg" alt="Xujun Zhang" class="profile-img" width="200">
-        </div>
+            </h1>
 
-        <!-- 关于 + CV -->
-        <section id="about">
-            <h2>About</h2>
-            <p>I am a tenure-track assistant professor at Guangxi Center for Mathematics Research, Guangxi University since 2024.</p>
-            <p>I received my Ph.D. at <a href="https://math.ucas.ac.cn/" target="_blank">School of Mathematical Sciences</a> at University of Chinese Academy of Sciences 
-                under the supervision of <a href="https://people.ucas.ac.cn/~fshdeng" target="_blank">Professor Fusheng Deng</a>. 
-                Previously, I was a postdoc fellow at <a href="http://www.math.ac.cn/" target="_blank">Institute of Mathematics</a> at Chinese Academy of Sciences
-                supervised by <a href="http://www.math.ac.cn/people/professor/202204/t20220413_695605.html" target="_blank">Professor Xiangyu Zhou</a>.</p>
-            <div class="cv-link">
-                📄 <a href="CV-for Xujun.pdf" target="_blank">Curriculum Vitae (PDF)</a>
-            </div>
-        </section>
+            <p class="position">Assistant Professor</p>
 
-        <!-- 研究方向 -->
-        <section id="research">
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Several Complex Variables and Complex Geometry</li>
-            </ul>
-        </section>
+            <p class="affiliation">
+                <a
+                    href="https://gxcmr.gxu.edu.cn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Guangxi Center for Mathematics Research
+                </a>
 
-        <!-- 联系方式 -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>📧 xujunzhang@amss.ac.cn  &nbsp;|&nbsp;  xujunzhang@gxu.edu.cn</p>
-        </section>
+                <span class="affiliation-separator" aria-hidden="true">·</span>
 
-        <!-- 出版物 (论文) 更清晰的分组 -->
-        <section id="publications">
-            <h2>Publications</h2>
+                <a
+                    href="https://mi.gxu.edu.cn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    School of Mathematics, Guangxi University
+                </a>
+            </p>
 
-            <h3>📌 Preprints</h3>
-            <ul>
-                <li>
-                    <span class="paper-title">The union problem for domains with partial pseudoconvex boundaries</span>
-                    <div class="paper-authors">Joint work with Jinjin Hu.</div>
-                    <a href="https://arxiv.org/abs/2503.18139" target="_blank">arXiv:2503.18139</a>
-                </li>
-            </ul>
+            <img
+                src="zxj-cv.jpg"
+                alt="Portrait of Xujun Zhang"
+                class="profile-img"
+                width="200"
+                height="auto"
+            >
 
-            <h3>📄 Peer-reviewed articles</h3>
-            <ul>
-                <li>
-                    <span class="paper-title">Skoda's L<sup>2</sup> division theorem for L<sup>2</sup>-optimal pairs</span>
-                    <div class="paper-authors">Joint work with Zhuo Liu. Accepted for publication in <em>Analysis & PDE</em>.</div>
-                    <a href="https://arxiv.org/abs/2411.15670" target="_blank">arXiv:2411.15670</a>
-                </li>
-                <li>
-                    <span class="paper-title">Characterizations of Curvature positivity of Riemannian vector bundles and convexity or pseudoconvexity of bounded domains in ℝ<sup>n</sup> or ℂ<sup>n</sup> in terms of L<sup>2</sup>-estimate of d or (𝜕)̄ equation</span>
-                    <div class="paper-authors">Joint work with Fusheng Deng.</div>
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022123621002664" target="_blank">J. Funct. Anal. (2021)</a>
-                </li>
-                <li>
-                    <span class="paper-title">A new characterization of L<sup>2</sup>-domains of holomorphy with null thin complements via L<sup>2</sup>-optimal conditions</span>
-                    <div class="paper-authors">Joint work with Zhuo Liu.</div>
-                    <a href="https://link.springer.com/article/10.1007/s12220-024-01738-y" target="_blank">J. Geom. Anal. (2024)</a>
-                </li>
-                <li>
-                    <span class="paper-title">Positivity of Riemannian Metric and the Existence Theorem of L<sup>2</sup> Estimates for d Operator</span>
-                    <a href="https://link.springer.com/article/10.1007/s12220-023-01332-8" target="_blank">J. Geom. Anal. (2023)</a>
-                </li>
-                <li>
-                    <span class="paper-title">Fridman’s Invariant, Squeezing Functions, and Exhausting Domains</span>
-                    <div class="paper-authors">Joint work with Fusheng Deng.</div>
-                    <a href="https://link.springer.com/article/10.1007/s10114-019-8501-7" target="_blank">Acta Math. Sin., Engl. Ser. (2019)</a>
-                </li>
-            </ul>
-        </section>
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <!-- 教学经历 更整齐 -->
-        <section id="teaching">
-            <h2>Teaching</h2>
+        <main>
+            <section id="about">
+                <h2>About</h2>
 
-            <h3>📖 Guangxi University (lecturer)</h3>
-            <ul>
-                <li>Linear Algebra (for non‑math majors), 2025.09 – 2025.12. [Lecture notes to be uploaded]</li>
-            </ul>
+                <p>
+                    Since 2024, I have been a tenure-track assistant professor at
+                    the Guangxi Center for Mathematics Research, Guangxi University.
+                </p>
 
-            <h3>🧑‍🏫 Teaching Assistant — University of Chinese Academy of Sciences</h3>
-            <ul>
-                <li>Algebra‑A (for math majors), 2022.09 – 2023.07.</li>
-                <li>Calculus‑B (for non‑math majors), 2020.01 – 2020.07 (online).</li>
-                <li>Calculus‑B (for non‑math majors), 2019.09 – 2020.01.</li>
-            </ul>
-        </section>
+                <p>
+                    I received my Ph.D. from the
+                    <a
+                        href="https://math.ucas.ac.cn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        School of Mathematical Sciences
+                    </a>
+                    at the University of Chinese Academy of Sciences, under the
+                    supervision of
+                    <a
+                        href="https://people.ucas.ac.cn/~fshdeng"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Professor Fusheng Deng
+                    </a>.
+                    Prior to joining Guangxi University, I was a postdoctoral fellow
+                    at the
+                    <a
+                        href="http://www.math.ac.cn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Institute of Mathematics, Chinese Academy of Sciences
+                    </a>,
+                    where I worked under the supervision of
+                    <a
+                        href="http://www.math.ac.cn/people/professor/202204/t20220413_695605.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Professor Xiangyu Zhou
+                    </a>.
+                </p>
 
-        <!-- 返回顶部 干净收尾 -->
-        <div class="backtop">
-            <a href="#top">⬆  Back to top</a>
-        </div>
+                <a
+                    class="cv-link"
+                    href="CV-for Xujun.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span aria-hidden="true">📄</span>
+                    Curriculum Vitae
+                </a>
+            </section>
+
+            <section id="research">
+                <h2>Research Interests</h2>
+
+                <ul class="research-list">
+                    <li>Several Complex Variables and Complex Geometry</li>
+                </ul>
+            </section>
+
+            <section id="publications">
+                <h2>Publications</h2>
+
+                <h3>Preprints</h3>
+
+                <ol class="publication-list">
+                    <li>
+                        <span class="paper-title">
+                            The Union Problem for Domains with Partial Pseudoconvex
+                            Boundaries
+                        </span>
+
+                        <p class="paper-meta">
+                            Joint work with Jinjin Hu.
+                        </p>
+
+                        <a
+                            class="paper-link"
+                            href="https://arxiv.org/abs/2503.18139"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            arXiv:2503.18139
+                        </a>
+                    </li>
+                </ol>
+
+                <h3>Peer-Reviewed Articles</h3>
+
+                <ol class="publication-list">
+                    <li>
+                        <span class="paper-title">
+                            Skoda's L<sup>2</sup> Division Theorem for
+                            L<sup>2</sup>-Optimal Pairs
+                        </span>
+
+                        <span class="status-label">Accepted</span>
+
+                        <p class="paper-meta">
+                            Joint work with Zhuo Liu. Accepted for publication in
+                            <em>Analysis &amp; PDE</em>.
+                        </p>
+
+                        <a
+                            class="paper-link"
+                            href="https://arxiv.org/abs/2411.15670"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            arXiv:2411.15670
+                        </a>
+                    </li>
+
+                    <li>
+                        <span class="paper-title">
+                            Characterizations of Curvature Positivity of Riemannian
+                            Vector Bundles and Convexity or Pseudoconvexity of
+                            Bounded Domains in ℝ<sup>n</sup> or ℂ<sup>n</sup> in
+                            Terms of L<sup>2</sup>-Estimates for the
+                            <em>d</em>- or ∂̄-Equation
+                        </span>
+
+                        <p class="paper-meta">
+                            Joint work with Fusheng Deng.
+                        </p>
+
+                        <a
+                            class="paper-link"
+                            href="https://www.sciencedirect.com/science/article/abs/pii/S0022123621002664"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <em>Journal of Functional Analysis</em> (2021)
+                        </a>
+                    </li>
+
+                    <li>
+                        <span class="paper-title">
+                            A New Characterization of L<sup>2</sup>-Domains of
+                            Holomorphy with Null Thin Complements via
+                            L<sup>2</sup>-Optimal Conditions
+                        </span>
+
+                        <p class="paper-meta">
+                            Joint work with Zhuo Liu.
+                        </p>
+
+                        <a
+                            class="paper-link"
+                            href="https://link.springer.com/article/10.1007/s12220-024-01738-y"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <em>Journal of Geometric Analysis</em> (2024)
+                        </a>
+                    </li>
+
+                    <li>
+                        <span class="paper-title">
+                            Positivity of Riemannian Metrics and the Existence
+                            Theorem of L<sup>2</sup>-Estimates for the
+                            <em>d</em>-Operator
+                        </span>
+
+                        <p class="paper-meta">
+                            Single-authored article.
+                        </p>
+
+                        <a
+                            class="paper-link"
+                            href="https://link.springer.com/article/10.1007/s12220-023-01332-8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <em>Journal of Geometric Analysis</em> (2023)
+                        </a>
+                    </li>
+
+                    <li>
+                        <span class="paper-title">
+                            Fridman’s Invariant, Squeezing Functions, and Exhausting
+                            Domains
+                        </span>
+
+                        <p class="paper-meta">
+                            Joint work with Fusheng Deng.
+                        </p>
+
+                        <a
+                            class="paper-link"
+                            href="https://link.springer.com/article/10.1007/s10114-019-8501-7"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <em>Acta Mathematica Sinica, English Series</em> (2019)
+                        </a>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="teaching">
+                <h2>Teaching</h2>
+
+                <h3>Guangxi University — Instructor</h3>
+
+                <ul class="teaching-list">
+                    <li>
+                        Linear Algebra for Non-Mathematics Majors,
+                        September–December 2025.
+                        <span class="course-note">Lecture notes forthcoming.</span>
+                    </li>
+                </ul>
+
+                <h3>
+                    University of Chinese Academy of Sciences — Teaching Assistant
+                </h3>
+
+                <ul class="teaching-list">
+                    <li>
+                        Algebra A for Mathematics Majors,
+                        September 2022–July 2023.
+                    </li>
+
+                    <li>
+                        Calculus B for Non-Mathematics Majors,
+                        January–July 2020
+                        <span class="course-note">(online).</span>
+                    </li>
+
+                    <li>
+                        Calculus B for Non-Mathematics Majors,
+                        September 2019–January 2020.
+                    </li>
+                </ul>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+
+                <div class="contact-card">
+                    <p>
+                        <span aria-hidden="true">✉️</span>
+
+                        <a href="mailto:xujunzhang@amss.ac.cn">
+                            xujunzhang@amss.ac.cn
+                        </a>
+
+                        <span class="email-separator" aria-hidden="true">|</span>
+
+                        <a href="mailto:xujunzhang@gxu.edu.cn">
+                            xujunzhang@gxu.edu.cn
+                        </a>
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <a class="backtop-link" href="#top">
+                ↑ Back to top
+            </a>
+        </footer>
+
     </div>
-    <!-- container 结束 -->
 </body>
 </html>
