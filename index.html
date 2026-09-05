@@ -373,6 +373,408 @@
             font-size: 0.92rem;
         }
 
+        /* ---------- Course hub ---------- */
+
+        .course-hub {
+            overflow: hidden;
+            background: linear-gradient(145deg, #f8fbfd 0%, #ffffff 64%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+
+        .course-hub-header {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 1.2rem;
+            align-items: end;
+            padding: 1.45rem 1.5rem 1.3rem;
+            background:
+                linear-gradient(120deg, rgba(23, 101, 143, 0.1), transparent 58%),
+                #f7fbfe;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .course-kicker {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: #4b7188;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+        }
+
+        .course-hub-title {
+            margin: 0;
+            color: #173f59;
+            font-size: clamp(1.35rem, 4vw, 1.75rem);
+            font-weight: 650;
+            line-height: 1.25;
+        }
+
+        .course-hub-subtitle {
+            max-width: 620px;
+            margin: 0.4rem 0 0;
+            color: #567084;
+            font-size: 0.95rem;
+        }
+
+        .material-summary {
+            min-width: 118px;
+            padding: 0.72rem 0.9rem;
+            text-align: right;
+            background-color: rgba(255, 255, 255, 0.78);
+            border: 1px solid #d8e7f0;
+            border-radius: 12px;
+        }
+
+        .material-summary strong,
+        .material-summary span {
+            display: block;
+        }
+
+        .material-summary strong {
+            color: #1a587d;
+            font-size: 1.28rem;
+            line-height: 1.2;
+        }
+
+        .material-summary span {
+            margin-top: 0.15rem;
+            color: #6a8191;
+            font-size: 0.76rem;
+        }
+
+        .course-tabs {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem 0;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .course-tab {
+            flex: 0 0 auto;
+            padding: 0.48rem 0.82rem;
+            color: #47677b;
+            font: inherit;
+            font-size: 0.86rem;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid #d9e5ed;
+            border-radius: 999px;
+            transition:
+                color 0.18s ease,
+                background-color 0.18s ease,
+                border-color 0.18s ease;
+        }
+
+        .course-tab:hover,
+        .course-tab[aria-pressed="true"] {
+            color: #ffffff;
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .course-tab:focus-visible,
+        .material-action:focus-visible,
+        .upload-button:focus-visible,
+        .delete-button:focus-visible,
+        .manage-materials summary:focus-visible,
+        .upload-dropzone:focus-visible,
+        .form-select:focus-visible {
+            outline: 3px solid rgba(23, 101, 143, 0.23);
+            outline-offset: 2px;
+        }
+
+        .course-overview {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.85rem;
+            padding: 1rem 1.5rem 0;
+        }
+
+        .course-card {
+            padding: 1rem 1.05rem;
+            background-color: #ffffff;
+            border: 1px solid #dfe9f0;
+            border-radius: 14px;
+        }
+
+        .course-card.is-active {
+            border-color: #87b5d0;
+            box-shadow: 0 7px 20px rgba(32, 92, 127, 0.08);
+        }
+
+        .course-term {
+            color: #527187;
+            font-size: 0.77rem;
+            font-weight: 700;
+            letter-spacing: 0.035em;
+            text-transform: uppercase;
+        }
+
+        .course-card h3 {
+            margin: 0.28rem 0 0.3rem;
+            color: #1e4f6d;
+            font-size: 1.08rem;
+            font-weight: 650;
+        }
+
+        .course-card p {
+            margin: 0;
+            color: #60798b;
+            font-size: 0.87rem;
+        }
+
+        .material-list {
+            display: grid;
+            gap: 0.72rem;
+            padding: 1rem 1.5rem 1.35rem;
+        }
+
+        .material-item {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            gap: 0.9rem;
+            align-items: center;
+            padding: 0.9rem 1rem;
+            background-color: #ffffff;
+            border: 1px solid #e0e9ef;
+            border-radius: 13px;
+        }
+
+        .material-icon {
+            display: grid;
+            width: 42px;
+            height: 48px;
+            place-items: center;
+            color: #256e99;
+            font-size: 0.7rem;
+            font-weight: 800;
+            background-color: #eaf4fa;
+            border: 1px solid #cee2ee;
+            border-radius: 8px;
+        }
+
+        .material-name {
+            display: block;
+            overflow: hidden;
+            color: #213e51;
+            font-size: 0.96rem;
+            font-weight: 650;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .material-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.15rem 0.5rem;
+            margin-top: 0.18rem;
+            color: #6b8190;
+            font-size: 0.78rem;
+        }
+
+        .material-meta span + span::before {
+            margin-right: 0.5rem;
+            color: #adc0cc;
+            content: "·";
+        }
+
+        .material-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .material-action,
+        .delete-button {
+            padding: 0.42rem 0.65rem;
+            font: inherit;
+            font-size: 0.79rem;
+            font-weight: 650;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .material-action {
+            color: #1b638d;
+            background-color: #edf6fb;
+            border: 1px solid #cfE3ef;
+        }
+
+        .material-action:hover {
+            color: #ffffff;
+            background-color: var(--accent);
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .delete-button {
+            display: none;
+            color: #92544c;
+            background-color: #fff7f5;
+            border: 1px solid #efd9d4;
+        }
+
+        .course-hub.management-open .delete-button {
+            display: inline-block;
+        }
+
+        .empty-materials {
+            padding: 1.65rem 1rem;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.68);
+            border: 1px dashed #cbdce7;
+            border-radius: 13px;
+        }
+
+        .empty-materials strong {
+            display: block;
+            color: #365d75;
+            font-size: 0.95rem;
+        }
+
+        .empty-materials span {
+            display: block;
+            margin-top: 0.25rem;
+            color: #7a8f9d;
+            font-size: 0.84rem;
+        }
+
+        .manage-materials {
+            border-top: 1px solid var(--border);
+        }
+
+        .manage-materials summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.9rem 1.5rem;
+            color: #315f79;
+            font-size: 0.9rem;
+            font-weight: 650;
+            cursor: pointer;
+            list-style: none;
+            background-color: #f2f8fb;
+        }
+
+        .manage-materials summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .manage-materials summary::after {
+            color: #4e7890;
+            content: "+";
+            font-size: 1.3rem;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .manage-materials[open] summary::after {
+            content: "−";
+        }
+
+        .upload-panel {
+            padding: 1.2rem 1.5rem 1.4rem;
+            background-color: #fbfdfe;
+        }
+
+        .local-storage-note {
+            margin: 0 0 0.9rem;
+            color: #667f8f;
+            font-size: 0.83rem;
+        }
+
+        .upload-controls {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: 0.28rem;
+            color: #496a7e;
+            font-size: 0.8rem;
+            font-weight: 650;
+        }
+
+        .form-select {
+            width: 100%;
+            min-height: 42px;
+            padding: 0.48rem 2rem 0.48rem 0.65rem;
+            color: #29495d;
+            font: inherit;
+            font-size: 0.87rem;
+            background-color: #ffffff;
+            border: 1px solid #cfdfe8;
+            border-radius: 9px;
+        }
+
+        .upload-dropzone {
+            padding: 1.15rem;
+            text-align: center;
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1.5px dashed #9dbfd2;
+            border-radius: 12px;
+            transition:
+                background-color 0.18s ease,
+                border-color 0.18s ease;
+        }
+
+        .upload-dropzone.is-dragging,
+        .upload-dropzone:hover {
+            background-color: #edf7fc;
+            border-color: var(--accent);
+        }
+
+        .upload-dropzone strong,
+        .upload-dropzone span {
+            display: block;
+        }
+
+        .upload-dropzone strong {
+            color: #265a78;
+            font-size: 0.92rem;
+        }
+
+        .upload-dropzone span {
+            margin-top: 0.18rem;
+            color: #7a8e9b;
+            font-size: 0.78rem;
+        }
+
+        .upload-button {
+            margin-top: 0.72rem;
+            padding: 0.48rem 0.9rem;
+            color: #ffffff;
+            font: inherit;
+            font-size: 0.82rem;
+            font-weight: 650;
+            cursor: pointer;
+            background-color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 999px;
+        }
+
+        .upload-button:hover {
+            background-color: var(--accent-dark);
+            border-color: var(--accent-dark);
+        }
+
+        .upload-status {
+            min-height: 1.3em;
+            margin: 0.65rem 0 0;
+            color: #527084;
+            font-size: 0.8rem;
+        }
+
         /* ---------- Footer ---------- */
 
         .site-footer {
@@ -452,6 +854,46 @@
                 width: 100%;
                 overflow-wrap: anywhere;
             }
+
+            .course-hub-header {
+                grid-template-columns: 1fr;
+                align-items: start;
+                padding: 1.2rem;
+            }
+
+            .material-summary {
+                width: fit-content;
+                min-width: 0;
+                text-align: left;
+            }
+
+            .course-tabs,
+            .course-overview,
+            .material-list,
+            .upload-panel {
+                padding-right: 1.15rem;
+                padding-left: 1.15rem;
+            }
+
+            .course-overview,
+            .upload-controls {
+                grid-template-columns: 1fr;
+            }
+
+            .material-item {
+                grid-template-columns: auto minmax(0, 1fr);
+            }
+
+            .material-actions {
+                grid-column: 1 / -1;
+                justify-content: flex-end;
+                padding-top: 0.15rem;
+            }
+
+            .manage-materials summary {
+                padding-right: 1.15rem;
+                padding-left: 1.15rem;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -480,6 +922,8 @@
             }
 
             .site-nav,
+            .manage-materials,
+            .delete-button,
             .site-footer {
                 display: none;
             }
@@ -537,6 +981,7 @@
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#courses">Courses</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -758,8 +1203,14 @@
                 <ul class="teaching-list">
                     <li>
                         Linear Algebra for Non-Mathematics Majors,
+                        February–July 2026.
+                        <span class="course-note">Animal Science.</span>
+                    </li>
+
+                    <li>
+                        Linear Algebra for Non-Mathematics Majors,
                         September–December 2025.
-                        <span class="course-note">Lecture notes forthcoming.</span>
+                        <span class="course-note">Automation.</span>
                     </li>
                 </ul>
 
@@ -784,6 +1235,115 @@
                         September 2019–January 2020.
                     </li>
                 </ul>
+            </section>
+
+            <section id="courses">
+                <h2>Course Hub <span lang="zh-CN">/ 课程中心</span></h2>
+
+                <div class="course-hub" id="course-hub">
+                    <div class="course-hub-header">
+                        <div>
+                            <span class="course-kicker">Teaching resources</span>
+                            <h3 class="course-hub-title">Linear Algebra</h3>
+                            <p class="course-hub-subtitle">
+                                Lecture notes and supporting materials for current and
+                                previous classes at Guangxi University.
+                            </p>
+                        </div>
+
+                        <div class="material-summary" aria-live="polite">
+                            <strong id="material-count">0</strong>
+                            <span id="material-count-label">materials available</span>
+                        </div>
+                    </div>
+
+                    <div class="course-tabs" role="group" aria-label="Filter course materials">
+                        <button class="course-tab" type="button" data-course="all" aria-pressed="true">
+                            All materials
+                        </button>
+                        <button class="course-tab" type="button" data-course="2026-spring" aria-pressed="false">
+                            Spring 2026
+                        </button>
+                        <button class="course-tab" type="button" data-course="2025-autumn" aria-pressed="false">
+                            Autumn 2025
+                        </button>
+                    </div>
+
+                    <div class="course-overview" aria-label="Available courses">
+                        <article class="course-card" data-course-card="2026-spring">
+                            <span class="course-term">Spring 2026</span>
+                            <h3>Linear Algebra</h3>
+                            <p>Animal Science · Guangxi University</p>
+                        </article>
+
+                        <article class="course-card" data-course-card="2025-autumn">
+                            <span class="course-term">Autumn 2025</span>
+                            <h3>Linear Algebra</h3>
+                            <p>Automation · Guangxi University</p>
+                        </article>
+                    </div>
+
+                    <div class="material-list" id="material-list" aria-live="polite">
+                        <div class="empty-materials">
+                            <strong>No materials have been added yet.</strong>
+                            <span>Lecture notes will appear here after they are uploaded.</span>
+                        </div>
+                    </div>
+
+                    <details class="manage-materials" id="manage-materials">
+                        <summary>Manage course materials</summary>
+
+                        <div class="upload-panel">
+                            <p class="local-storage-note">
+                                This standalone page keeps uploaded files in this browser.
+                                They remain available after a refresh on the same device.
+                            </p>
+
+                            <div class="upload-controls">
+                                <div class="form-field">
+                                    <label for="upload-course">Course</label>
+                                    <select class="form-select" id="upload-course">
+                                        <option value="2026-spring">Spring 2026 · Animal Science</option>
+                                        <option value="2025-autumn">Autumn 2025 · Automation</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="upload-category">Material type</label>
+                                    <select class="form-select" id="upload-category">
+                                        <option value="Lecture Notes">Lecture Notes</option>
+                                        <option value="Exercises">Exercises</option>
+                                        <option value="Solutions">Solutions</option>
+                                        <option value="Syllabus">Syllabus</option>
+                                        <option value="Supplementary">Supplementary</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div
+                                class="upload-dropzone"
+                                id="upload-dropzone"
+                                aria-controls="course-file-input"
+                            >
+                                <strong>Drop lecture notes here</strong>
+                                <span>PDF, Word, PowerPoint, LaTeX, Markdown or ZIP · up to 50 MB each</span>
+                                <button class="upload-button" id="choose-files" type="button">
+                                    Choose files
+                                </button>
+                            </div>
+
+                            <input
+                                id="course-file-input"
+                                type="file"
+                                accept=".pdf,.doc,.docx,.ppt,.pptx,.tex,.md,.zip"
+                                multiple
+                                hidden
+                            >
+
+                            <p class="upload-status" id="upload-status" role="status"></p>
+                        </div>
+                    </details>
+                </div>
             </section>
 
             <section id="contact">
@@ -814,5 +1374,345 @@
         </footer>
 
     </div>
+
+    <script>
+        (() => {
+            "use strict";
+
+            const DB_NAME = "xujun-course-materials";
+            const DB_VERSION = 1;
+            const STORE_NAME = "materials";
+            const MAX_FILE_SIZE = 50 * 1024 * 1024;
+            const allowedExtensions = new Set([
+                "pdf", "doc", "docx", "ppt", "pptx", "tex", "md", "zip"
+            ]);
+            const courseNames = {
+                "2026-spring": "Spring 2026",
+                "2025-autumn": "Autumn 2025"
+            };
+
+            const hub = document.getElementById("course-hub");
+            const manager = document.getElementById("manage-materials");
+            const fileInput = document.getElementById("course-file-input");
+            const chooseFiles = document.getElementById("choose-files");
+            const dropzone = document.getElementById("upload-dropzone");
+            const courseSelect = document.getElementById("upload-course");
+            const categorySelect = document.getElementById("upload-category");
+            const materialList = document.getElementById("material-list");
+            const materialCount = document.getElementById("material-count");
+            const materialCountLabel = document.getElementById("material-count-label");
+            const uploadStatus = document.getElementById("upload-status");
+            const filterButtons = Array.from(document.querySelectorAll(".course-tab"));
+            const courseCards = Array.from(document.querySelectorAll("[data-course-card]"));
+
+            let currentCourse = "all";
+            let materials = [];
+            let databasePromise;
+
+            function openDatabase() {
+                if (!databasePromise) {
+                    databasePromise = new Promise((resolve, reject) => {
+                        if (!("indexedDB" in window)) {
+                            reject(new Error("Browser storage is unavailable."));
+                            return;
+                        }
+
+                        const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+                        request.onupgradeneeded = () => {
+                            const database = request.result;
+                            if (!database.objectStoreNames.contains(STORE_NAME)) {
+                                const store = database.createObjectStore(STORE_NAME, { keyPath: "id" });
+                                store.createIndex("course", "course", { unique: false });
+                                store.createIndex("uploadedAt", "uploadedAt", { unique: false });
+                            }
+                        };
+
+                        request.onsuccess = () => resolve(request.result);
+                        request.onerror = () => reject(request.error || new Error("Unable to open storage."));
+                    });
+                }
+
+                return databasePromise;
+            }
+
+            async function readMaterials() {
+                const database = await openDatabase();
+                return new Promise((resolve, reject) => {
+                    const request = database
+                        .transaction(STORE_NAME, "readonly")
+                        .objectStore(STORE_NAME)
+                        .getAll();
+
+                    request.onsuccess = () => resolve(request.result || []);
+                    request.onerror = () => reject(request.error || new Error("Unable to read materials."));
+                });
+            }
+
+            async function writeMaterial(record) {
+                const database = await openDatabase();
+                return new Promise((resolve, reject) => {
+                    const transaction = database.transaction(STORE_NAME, "readwrite");
+                    transaction.objectStore(STORE_NAME).put(record);
+                    transaction.oncomplete = resolve;
+                    transaction.onerror = () => reject(transaction.error || new Error("Unable to save this file."));
+                    transaction.onabort = () => reject(transaction.error || new Error("Saving was cancelled."));
+                });
+            }
+
+            async function removeMaterial(id) {
+                const database = await openDatabase();
+                return new Promise((resolve, reject) => {
+                    const transaction = database.transaction(STORE_NAME, "readwrite");
+                    transaction.objectStore(STORE_NAME).delete(id);
+                    transaction.oncomplete = resolve;
+                    transaction.onerror = () => reject(transaction.error || new Error("Unable to remove this file."));
+                });
+            }
+
+            function createId() {
+                if (window.crypto && typeof window.crypto.randomUUID === "function") {
+                    return window.crypto.randomUUID();
+                }
+
+                return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+            }
+
+            function fileExtension(filename) {
+                const pieces = filename.split(".");
+                return pieces.length > 1 ? pieces.pop().toLowerCase() : "file";
+            }
+
+            function formatBytes(bytes) {
+                if (!Number.isFinite(bytes) || bytes === 0) return "0 KB";
+                const units = ["B", "KB", "MB", "GB"];
+                const index = Math.min(Math.floor(Math.log(bytes) / Math.log(1024)), units.length - 1);
+                const value = bytes / Math.pow(1024, index);
+                return `${value.toFixed(index === 0 || value >= 10 ? 0 : 1)} ${units[index]}`;
+            }
+
+            function formatDate(value) {
+                return new Intl.DateTimeFormat("en", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric"
+                }).format(new Date(value));
+            }
+
+            function makeElement(tag, className, text) {
+                const element = document.createElement(tag);
+                if (className) element.className = className;
+                if (typeof text === "string") element.textContent = text;
+                return element;
+            }
+
+            function filteredMaterials() {
+                return materials
+                    .filter((item) => currentCourse === "all" || item.course === currentCourse)
+                    .sort((a, b) => b.uploadedAt - a.uploadedAt);
+            }
+
+            function openFile(item) {
+                const url = URL.createObjectURL(item.file);
+                const opened = window.open(url, "_blank");
+                if (opened) opened.opener = null;
+                if (!opened) {
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.download = item.name;
+                    link.click();
+                }
+                window.setTimeout(() => URL.revokeObjectURL(url), 60000);
+            }
+
+            function downloadFile(item) {
+                const url = URL.createObjectURL(item.file);
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = item.name;
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+                window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+            }
+
+            function renderMaterials() {
+                const visibleMaterials = filteredMaterials();
+                materialList.replaceChildren();
+
+                materialCount.textContent = String(visibleMaterials.length);
+                materialCountLabel.textContent = visibleMaterials.length === 1
+                    ? "material available"
+                    : "materials available";
+
+                courseCards.forEach((card) => {
+                    card.classList.toggle(
+                        "is-active",
+                        currentCourse === "all" || card.dataset.courseCard === currentCourse
+                    );
+                });
+
+                if (visibleMaterials.length === 0) {
+                    const empty = makeElement("div", "empty-materials");
+                    empty.append(
+                        makeElement("strong", "", "No materials have been added yet."),
+                        makeElement("span", "", "Lecture notes will appear here after they are uploaded.")
+                    );
+                    materialList.appendChild(empty);
+                    return;
+                }
+
+                visibleMaterials.forEach((item) => {
+                    const row = makeElement("article", "material-item");
+                    const icon = makeElement("span", "material-icon", fileExtension(item.name).toUpperCase());
+                    icon.setAttribute("aria-hidden", "true");
+
+                    const info = makeElement("div", "material-info");
+                    const name = makeElement("span", "material-name", item.name);
+                    name.title = item.name;
+
+                    const meta = makeElement("div", "material-meta");
+                    meta.append(
+                        makeElement("span", "", item.category),
+                        makeElement("span", "", courseNames[item.course] || "Course material"),
+                        makeElement("span", "", formatBytes(item.size)),
+                        makeElement("span", "", formatDate(item.uploadedAt))
+                    );
+                    info.append(name, meta);
+
+                    const actions = makeElement("div", "material-actions");
+                    const openButton = makeElement("button", "material-action", "Open");
+                    openButton.type = "button";
+                    openButton.addEventListener("click", () => openFile(item));
+
+                    const downloadButton = makeElement("button", "material-action", "Download");
+                    downloadButton.type = "button";
+                    downloadButton.addEventListener("click", () => downloadFile(item));
+
+                    const deleteButton = makeElement("button", "delete-button", "Delete");
+                    deleteButton.type = "button";
+                    deleteButton.setAttribute("aria-label", `Delete ${item.name}`);
+                    deleteButton.addEventListener("click", async () => {
+                        if (!window.confirm(`Remove “${item.name}” from this course page?`)) return;
+
+                        try {
+                            await removeMaterial(item.id);
+                            materials = materials.filter((record) => record.id !== item.id);
+                            renderMaterials();
+                            uploadStatus.textContent = `${item.name} was removed.`;
+                        } catch (error) {
+                            uploadStatus.textContent = error.message;
+                        }
+                    });
+
+                    actions.append(openButton, downloadButton, deleteButton);
+                    row.append(icon, info, actions);
+                    materialList.appendChild(row);
+                });
+            }
+
+            async function handleFiles(fileCollection) {
+                const files = Array.from(fileCollection || []);
+                if (files.length === 0) return;
+
+                uploadStatus.textContent = "Saving materials…";
+                let saved = 0;
+                const rejected = [];
+
+                for (const file of files) {
+                    const extension = fileExtension(file.name);
+
+                    if (!allowedExtensions.has(extension)) {
+                        rejected.push(`${file.name} (unsupported format)`);
+                        continue;
+                    }
+
+                    if (file.size > MAX_FILE_SIZE) {
+                        rejected.push(`${file.name} (larger than 50 MB)`);
+                        continue;
+                    }
+
+                    const record = {
+                        id: createId(),
+                        name: file.name,
+                        size: file.size,
+                        type: file.type || "application/octet-stream",
+                        course: courseSelect.value,
+                        category: categorySelect.value,
+                        uploadedAt: Date.now(),
+                        file
+                    };
+
+                    try {
+                        await writeMaterial(record);
+                        materials.push(record);
+                        saved += 1;
+                    } catch (error) {
+                        rejected.push(`${file.name} (${error.message})`);
+                    }
+                }
+
+                currentCourse = courseSelect.value;
+                filterButtons.forEach((button) => {
+                    button.setAttribute("aria-pressed", String(button.dataset.course === currentCourse));
+                });
+                renderMaterials();
+                fileInput.value = "";
+
+                const savedMessage = saved === 1 ? "1 file added." : `${saved} files added.`;
+                uploadStatus.textContent = rejected.length > 0
+                    ? `${savedMessage} Not added: ${rejected.join(", ")}.`
+                    : savedMessage;
+            }
+
+            filterButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    currentCourse = button.dataset.course;
+                    filterButtons.forEach((candidate) => {
+                        candidate.setAttribute("aria-pressed", String(candidate === button));
+                    });
+                    renderMaterials();
+                });
+            });
+
+            manager.addEventListener("toggle", () => {
+                hub.classList.toggle("management-open", manager.open);
+            });
+
+            chooseFiles.addEventListener("click", (event) => {
+                event.stopPropagation();
+                fileInput.click();
+            });
+            dropzone.addEventListener("click", () => fileInput.click());
+            fileInput.addEventListener("change", () => handleFiles(fileInput.files));
+
+            ["dragenter", "dragover"].forEach((eventName) => {
+                dropzone.addEventListener(eventName, (event) => {
+                    event.preventDefault();
+                    dropzone.classList.add("is-dragging");
+                });
+            });
+
+            ["dragleave", "drop"].forEach((eventName) => {
+                dropzone.addEventListener(eventName, (event) => {
+                    event.preventDefault();
+                    dropzone.classList.remove("is-dragging");
+                });
+            });
+
+            dropzone.addEventListener("drop", (event) => handleFiles(event.dataTransfer.files));
+
+            readMaterials()
+                .then((storedMaterials) => {
+                    materials = storedMaterials;
+                    renderMaterials();
+                })
+                .catch((error) => {
+                    uploadStatus.textContent = error.message;
+                    chooseFiles.disabled = true;
+                    dropzone.setAttribute("aria-disabled", "true");
+                });
+        })();
+    </script>
 </body>
 </html>
